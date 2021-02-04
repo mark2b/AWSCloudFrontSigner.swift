@@ -36,6 +36,7 @@ First create instance of *CookiesSigner* as shown in example below.
 `
 let signer = CookiesSigner(resourceUrl: resourceUrl, keyPairId: "K1234567890120", privateKey: "PRIVATE KEY")
 `
+
 And then use one of signer's methods to get signed object:
 
 1. Create signed cookies for HTTP request
