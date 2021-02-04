@@ -7,7 +7,7 @@ There are two ways to access to the AWS CloudFront protected content: by Signed 
 Currently this package provides only Signed Cookies access method.
 
 
-##Prerequisites
+## Prerequisites
 
 If you already have CloudFront distribition you need protected it by private key. 
 
@@ -51,7 +51,7 @@ And then use one of signer's methods to get signed object:
 	`let asset = try signer.AVURLAsset()`
 
 
-###CookiesSigner Parameters:
+### CookiesSigner Parameters:
 - resourceUrl: Primary resource you need access to.
 - policyResource: Resource name will be set to policy. Optional. In case of missing resourceUrl will be used.
 - dateLessThan: DateLessThan parameter of custom policy. Optional. In case of missing current date + one minute will be used.
