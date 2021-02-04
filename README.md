@@ -54,3 +54,19 @@ Parameters:
     func makeAVAsset() throws -> AVURLAsset
 ```
 
+## Installation
+
+AWSCloudFrontSigner is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "AWSCloudFrontSigner"
+```
+
+## Author
+
+Mark Berner, mark@berner.dev
+
+## License
+
+l10n is available under the MIT license. See the LICENSE file for more info.
