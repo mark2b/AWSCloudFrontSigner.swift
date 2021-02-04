@@ -91,7 +91,7 @@ final class AWSCloudFrontSignerTests: XCTestCase {
         do {
             let resourceUrl = URL(string: "https://d1234567890123.cloudfront.net/*")!
 
-            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, keyPairId: "K37647FLR48I54")
+            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, keyPairId: "K1234567890120")
             
             let cookie = try signer.makeCloudFrontPolicyCookie()
             XCTAssertEqual(cookie.value, "eyJTdGF0ZW1lbnQiOlt7IkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6NjQwOTIyMTEyMDB9fSwiUmVzb3VyY2UiOiJodHRwczovL2QxMjM0NTY3ODkwMTIzLmNsb3VkZnJvbnQubmV0LyoifV19")
@@ -120,7 +120,7 @@ final class AWSCloudFrontSignerTests: XCTestCase {
             }
             """
 
-            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, policy: policy, keyPairId: "K37647FLR48I54", privateKey: nil)
+            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, policy: policy, keyPairId: "K1234567890120", privateKey: nil)
             
             let cookie = try signer.makeCloudFrontPolicyCookie()
             XCTAssertEqual(cookie.value, "eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9kMTIzNDU2Nzg5MDEyMy5jbG91ZGZyb250Lm5ldC8qIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzM4MjY0ODg2fX19XX0_")
@@ -135,7 +135,7 @@ final class AWSCloudFrontSignerTests: XCTestCase {
         do {
             let resourceUrl = URL(string: "https://d1234567890123.cloudfront.net/*")!
 
-            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, keyPairId: "K37647FLR48I54", privateKey: pk)
+            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, keyPairId: "K1234567890120", privateKey: pk)
             
             let cookie = try signer.makeCloudFrontSignatureCookie()
             XCTAssertEqual(cookie.value, "KQUIn0wn5PeU9CqqAJc7LqTFW4hyWdNuqkYhxZxZQHl-TbvjWE5EmUlbPy2s37T9EH3QOFVQOvQ9gz14-q1ELmI~8yjvzLUxoAeNc7rNZHVANhxDrkkMeCsd7SzU36DXkh2Fac5SBI2bGefI1kdD8F8ndiuuzdG0M4dZz8ht5RntcGVilsVXXlYl32tfzVCKiNjrAe0X~I5NrB5ihyj8s8-tXb-ezCL~m~PtBpXKVdYZcS4bR2l1629wGwBenlERZvVqeKh0EE~PKzB0TqkeslHXd8iuELKUDkmBo7QgIiP-cWJXvWcm2p00hjDpFh9Gqoc1pamvqOyIOgds5ecKlA__")
@@ -164,7 +164,7 @@ final class AWSCloudFrontSignerTests: XCTestCase {
             }
             """
 
-            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, policy: policy, keyPairId: "K37647FLR48I54", privateKey: pk)
+            let signer = CookiesSigner(resourceUrl: resourceUrl, dateLessThan: Date.distantFuture, policy: policy, keyPairId: "K1234567890120", privateKey: pk)
             
             let cookie = try signer.makeCloudFrontSignatureCookie()
             XCTAssertEqual(cookie.value, "uglPRCnXDqqe94bYwUqkLMi0I~Dp4G4GGPxVczoTcLvKdK620FIkAbj3zrBoJ80gyRBnHeFde-gtDSVC19P7y69YUEnRYoXpmhFoGYsbRqWgiekD0hya0nZtcUBdatJ2DhMu8c5r-O~H83KX~QJbEBc6U1dL~hkK4C3TZZvthnMrGUWFJk~logdpsrckVJ8v-XP-tewmyS0v4T26hkeAnJ4ev6ovhwoGkSyTY7KeyUw84adIiyPv1wkNJavPyUpsZ1~s844wdmAjmm0ri2lSh0HtPod1EpR2rsk7HElixvHWFN1ftZCw1LLXLj23Xr0eOiWGZmVRI2hef~aYhsSH3g__")

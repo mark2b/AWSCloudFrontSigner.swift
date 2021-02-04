@@ -17,6 +17,22 @@ public struct CookiesSigner : CookiesSignerAPI {
     var privateKeyFile:String?
     var secKey:SecKey?
 
+    /**
+        CookiesSigner
+        Parameters:
+        - resourceUrl: Primary resource you need access to.
+        - policyResource: Resource name will be set to policy. Optional. In case of missing resourceUrl will be used.
+        - dateLessThan: DateLessThan parameter of custom policy. Optional. In case of missing current date + one minute will be used.
+        - dateGreaterThan: DateGreaterThan parameter of custom policy. Optional
+        - ipAddress: IpAddress parameter of custom policy. Optional
+        - domain: Domain parameter of cookie. Optional. In case of missing resourceUrl.host will be used.
+        - path: Path parameter of cookie. Optional. In case of missing "/" will be used.
+        - policy: User provided policy as string. Optional. This parameter overrides automatically build policy based on parameters: policyResource, dateLessThan, dateGreaterThan, ipAddress.
+        - keyPairId: Public key ID registered in the CloudFront console
+        - privateKey: Private key in format base64 without header and footer. Optional. In case of missing, parameters privateKeyFile or secKey will be used
+        - privateKeyFile: Path to the file containing Private key in format base64 with header and footer. Optional. In case of missing, parameters privateKey or secKey will be used
+        - secKey: Instance of SecKey object. This parameter overrides parameters privateKey and privateKeyFile
+     */
     public init(resourceUrl:URL, policyResource:String? = nil, dateLessThan:Date? = nil, dateGreaterThan:Date? = nil, ipAddress:String? = nil, domain:String? = nil, path:String = "/", policy:String? = nil, keyPairId:String, privateKey:String? = nil, privateKeyFile:String? = nil, secKey:SecKey? = nil) {
         self.resourceUrl = resourceUrl
         self.policyResource = policyResource ?? resourceUrl.absoluteString
