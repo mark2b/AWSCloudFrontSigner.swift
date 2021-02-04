@@ -69,4 +69,4 @@ Mark Berner, mark@berner.dev
 
 ## License
 
-l10n is available under the MIT license. See the LICENSE file for more info.
+AWSCloudFrontSigner is available under the MIT license. See the LICENSE file for more info.
